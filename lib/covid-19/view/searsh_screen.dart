@@ -12,7 +12,6 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
-    TextEditingController txtSearch = TextEditingController();
     CovidController covidController = Get.put(CovidController());
     return SafeArea(
         child: Scaffold(
@@ -21,7 +20,7 @@ class _SearchScreenState extends State<SearchScreen> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-              controller: txtSearch,
+
               decoration: InputDecoration(
                 suffixIcon: Icon(Icons.search),
                 border:
@@ -29,7 +28,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 hintText: "Search",
               ),
               onChanged: (value) {
-                covidController.searchcountry(txtSearch.text);
+                covidController.searchcountry(value);
               },
             ),
           ),

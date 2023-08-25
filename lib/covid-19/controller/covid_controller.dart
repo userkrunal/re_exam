@@ -4,19 +4,19 @@ import 'package:re_exam/covid-19/model/covid_model.dart';
 
 class CovidController extends GetxController
 {
-  List <CovidModel>covid=<CovidModel>[].obs;
+  List<CovidModel> covid =<CovidModel>[].obs;
   Future<List> getApi()
   async {
     covid=await CovidHelper.helper.covidApi();
     return covid;
   }
 
-  List<CovidModel> l1=<CovidModel>[].obs;
+  RxList<CovidModel> l1=<CovidModel>[].obs;
   List<CovidModel> filtered=<CovidModel>[].obs;
 
   void searchcountry(String search) {
     if (search.isEmpty) {
-      l1 = covid;
+      l1.value= covid;
     }
     else {
       filtered.clear();
@@ -25,7 +25,7 @@ class CovidController extends GetxController
           filtered.add(c);
         }
       }
-      l1 = filtered;
+      l1.value = filtered;
     }
   }
 

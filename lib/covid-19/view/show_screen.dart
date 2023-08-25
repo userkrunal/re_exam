@@ -23,6 +23,7 @@ class _ShowScreenState extends State<ShowScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          SizedBox(height: 40),
           Text("${controller.covid[index].country}",style: TextStyle(fontSize: 30),),
           Container(
            height: 15.h,
